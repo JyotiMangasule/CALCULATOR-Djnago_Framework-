@@ -1,0 +1,27 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.http import JsonResponse
+
+
+# Create your views here.
+from .models import Details 
+
+# Create your views here.
+
+
+    
+def getCalcutaion(request):
+    if request.method == 'POST':
+        std=Details.objects.create(
+            num1=request.POST['num1'],
+            num2=request.POST['num2'],
+            
+            result=request.POST['result']
+        )
+        std.save()
+        print("Data Inserted")
+        
+        return redirect('/')
+    else:
+        
+        return render(request,'index.html')
