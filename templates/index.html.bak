@@ -29,7 +29,6 @@
 		h2 {
        text-align: center;
          }
-		 
 		 body {
          background-position: center;
         }
